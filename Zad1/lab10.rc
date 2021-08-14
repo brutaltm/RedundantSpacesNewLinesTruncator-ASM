@@ -1,0 +1,74 @@
+#define BS_CENTER 0x300L
+#define BS_PUSHBUTTON 0x0L
+#define ES_LEFT 0x0L
+#define SS_LEFT 0x0L
+#define WS_BORDER 0x800000L
+#define WS_CHILD 0x40000000L
+#define WS_CAPTION 0x0C00000L
+#define WS_MINIMIZEBOX 0x00020000L 
+#define WS_MAXIMIZEBOX 0x00010000L
+#define WS_POPUP 0x80000000L
+#define WS_SYSMENU 0x00080000L
+#define WS_TABSTOP 0x10000L 
+#define WS_VISIBLE 0x10000000L
+#define CBS_DROPDOWNLIST 3h
+#define CBS_HASSTRINGS 200h
+//--------------------------------
+#define STR1 1  // 1 to identyfikator wiersza
+#define STR2 2  // 2 to identyfikator wiersza
+#define STR3 3  // 3 to identyfikator wiersza
+#define IDI_ICON1 11
+#define IDI_ICUR1 12
+
+DLG1 DIALOG 0, 0, 410, 130
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX
+CAPTION "Projekt 3 - Bartosz Ruta"
+FONT 10, "Arial"
+{
+	CONTROL "Scie¿ka:", 2, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE, 10, 5, 40, 10
+	CONTROL "", 1, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 10, 15, 350, 12
+		
+	//CONTROL "", 2, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 20, 40, 150, 16
+    
+ 
+	CONTROL "Otwórz",3,"BUTTON",BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP,360,15,40,12
+	CONTROL "", 4, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE, 10, 30, 350, 10
+	CONTROL "Znaki do usuniêcia powtórzeñ:", 5, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE, 10, 40, 100, 10
+	CONTROL "CR LF", 10, "STATIC", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 120, 40, 25, 10
+	CONTROL "32", 6, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 147, 40, 19, 10
+	CONTROL "09", 7, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 167, 40, 19, 10
+	CONTROL "", 14, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE, 10, 50, 340, 10
+	CONTROL "", 11, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE, 10, 60, 340, 10
+	CONTROL "", 12, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE, 10, 70, 340, 10
+	CONTROL "", 13, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE, 10, 80, 340, 10
+	CONTROL "", 8, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE, 10, 100, 340, 10
+	CONTROL "Start", 9, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 360, 100, 40, 12
+
+
+ //CONTROL "test", 106, "COMBOBOX", WS_VISIBLE | WS_CHILD | WS_TABSTOP | WS_BORDER | CBS_DROPDOWNLIST | CBS_HASSTRINGS, 20, 80, 104, 16
+}
+STRINGTABLE
+{
+ STR1 "Bartosz Ruta"
+ STR2 "B³¹d!"
+ STR3 ""
+}
+IDI_ICON1 ICON "ikona.ico"
+IDI_ICUR1 CURSOR "kursor.cur"
+MENU1 MENU
+{
+ POPUP "Plik"
+ {
+  MENUITEM "Zamknij", 101 // 101 to identyfikator punktu menu
+ // POPUP "Punkt 1_2_*"
+//  {
+ //  MENUITEM "Punkt 1_2_1", 102 // 102 to identyfikator punktu menu
+ //  MENUITEM "Punkt 1_2_2", 103 // 103 to identyfikator punktu menu
+  //}
+ }
+POPUP "Edycja"
+{
+	MENUITEM "Przywroc", 104 // 104 to identyfikator punktu menu
+}
+ //MENUITEM "Wyjœcie", 105 // 105 to identyfikator punktu menu
+} 
